@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berrick | Software Developer</title>
+    <link rel="stylesheet" href="project2.css">
+</head>
+
+<body>
+<!-- NAV -->
+<nav>
+        <h1 class="nav__heading">Berrick</h1>
+        <div class="nav__links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+<!-- HERO -->
+<section id="home" class="home">
+    <div class="container">
+        <h1>I build modern, scalable web applications.</h1>
+        <p>Software Developer based in Rwanda focused on performance, design, and real-world impact.</p>
+
+        <div class="cta">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn outline">Hire Me</a>
+        </div>
+        </div>
+    </section>
+<!-- ABOUT -->
+<section id="about" class="section about">
+    <h2>About Me</h2>
+
+    <div class="about__content">
+        <div class="about__image">
+            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=600&q=80"
+                alt="Developer">
+        </div>
+
+        <div class="about__text">
+            <p>
+                I'm a software developer specializing in building fast, scalable web applications using modern
+                technologies
+                like Next.js, Node.js, and TypeScript.
+            </p>
+
+            <div class="skills">
+                <span>JavaScript</span>
+                <span>TypeScript</span>
+                <span>Next.js</span>
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PROJECTS -->
+<section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="projects">
+        <div class="card reveal">
+            <div class="card__image">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
+                    alt="Survey Project">
+                </div>
+                <div class="card__content">
+                    <h3>Topographic Survey Platform</h3>
+                    <p>Full-stack system for managing survey data, clients, and reports.</p>
+                </div>
+            </div>
+    <div class="card reveal">
+        <div class="card__image">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80"
+                alt="Magazine Platform">
+                </div>
+                <div class="card__content">
+                    <h3>Online Magazine System</h3>
+                    <p>Scalable content platform with caching and recommendation system.</p>
+                </div>
+                </div>
+                <div class="card reveal">
+                    <div class="card__image">
+                        <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=800&q=80"
+                            alt="E-commerce Platform">
+                    </div>
+                    <div class="card__content">
+                        <h3>E-commerce Platform</h3>
+                        <p>Modern online store with CMS integration and custom backend.</p>
+                    </div>
+                </div>
+        </div>
+        </section>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+    
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Tell me about your project..." required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+</body>
+<script>
+    const reveals = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+        reveals.forEach((el) => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - 100) {
+                el.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+
+</script>
+</html>

@@ -1,0 +1,21 @@
+/* Custom smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism for cards */
+.project-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Form focus glow */
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Initial state for hero animation */
+#hero-title {
+  transform: translateY(20px);
+}

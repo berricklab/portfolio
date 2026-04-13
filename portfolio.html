@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio | Discover the youngest coder in Rwanda</title>
+  <style>
+    img {
+      border-radius: 100%;
+      border: 3px solid;
+      width: 200px;
+      height: 200px;
+    }
+
+    .checkbox,
+    p {
+      display: inline;
+    }
+  </style>
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="portfolio.py">
+
+</head>
+
+<body>
+
+  <header>
+    <h1 class="hea">My Portfolio</h1>
+    <nav>
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="menu-btn">☰</button>
+        </nav>
+        </header>
+
+  <section id="home" class="section">
+    <img src="../../../berrick's Python code/css/images/banner.png" alt="">
+    <h2>Hello, I'm a Developer</h2>
+    <p>I build modern web apps</p>
+    </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p class="about_me">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quo, expedita ab tempore numquam
+      fugiat asperiores quaerat dolorem eaque, aliquam dignissimos sit ut hic dicta voluptates iste nostrum officia
+      voluptatum temporibus tenetur pariatur officiis illo voluptate velit? Cumque beatae temporibus pariatur saepe
+      laudantium aut autem odio deserunt voluptate perspiciatis voluptas vitae fugit odit, delectus placeat laboriosam,
+      recusandae sed consequuntur! Sequi, officiis deleniti accusamus provident voluptas ullam. Magni, esse! Reiciendis,
+      optio odit iste maiores ullam eveniet quisquam recusandae sed itaque, ducimus consectetur blanditiis provident
+      quam illum facilis velit obcaecati dignissimos! Cumque quaerat natus a quas, iste officia minus ex corporis nulla.
+    </p>
+    <p class="about_me">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quis, qui velit minus
+      inventore veniam praesentium tenetur officiis dignissimos totam ullam. Eaque a dolore cum sed animi hic ullam
+      molestiae beatae inventore itaque et ipsum vel libero quam quaerat laudantium rerum error, natus doloremque
+      consequatur porro. Omnis est recusandae voluptates obcaecati reprehenderit consequatur doloribus ducimus,
+      explicabo impedit ipsam, officia nesciunt molestias amet eos eveniet doloremque officiis cum? Blanditiis sint
+      eaque, ex sapiente nostrum impedit quam harum totam temporibus. Placeat perferendis nihil reiciendis tempore
+      inventore maxime nulla quia dolor. Repellendus qui deserunt esse officiis in ullam totam eaque laboriosam vitae
+      id!</p>
+    </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Project 1</h3>
+        <p class="project">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus dolorum libero ducimus
+          illum porro ab sapiente, sed harum neque incidunt, quae, iure quibusdam adipisci. Sunt molestiae cumque
+          laborum quis error!</p>
+        </div>
+        <div class="card">
+        <h3>Project 2 </h3>
+        <p class="project">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus dolorum libero ducimus
+          illum porro ab sapiente, sed harum neque incidunt, quae, iure quibusdam adipisci. Sunt molestiae cumque
+          laborum quis error!</p>
+        
+        </div>
+        <div class="card">
+        <h3>Project 3</h3>
+        <p class="project">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus dolorum libero ducimus
+          illum porro ab sapiente, sed harum neque incidunt, quae, iure quibusdam adipisci. Sunt molestiae cumque
+          laborum quis error!</p>
+
+      </div>
+      </div>
+      </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Enter your name" required>
+      <input type="email" placeholder="Enter your email" required>
+      <textarea placeholder="Type your suggestion please!" required></textarea>
+      <div class="button_container">
+        <button type="submit" id="submit">Send</button>
+        <button type="reset" id="submit">Clear</button>
+      </div>
+      </form>
+      </section>
+
+  <footer>
+    <p class="footer">© 2026 My Portfolio</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Simple Hero Animation
+      const heroTitle = document.getElementById('hero-title');
+      heroTitle.style.transition = 'all 1s ease-out';
+      heroTitle.style.opacity = '1';
+      heroTitle.style.transform = 'translateY(0)';
+
+      // 2. Form Submission via Python API
+      const contactForm = document.getElementById('contactForm');
+
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = {
+          name: document.getElementById('name').value,
+          message: document.getElementById('message').value
+        };
+
+        try {
+          const response = await fetch('/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          });
+
+          const result = await response.json();
+          if (result.status === 'success') {
+            alert('Message sent successfully!');
+            contactForm.reset();
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Failed to send message.');
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #2584ff;
+    border-radius: 20px;
+}
+
+label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+input {
+    display: block;
+    outline: 0;
+    border: 5px solid #2584ff;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: blue;
+    outline: 0;
+    border: 5px solid blue;
+    border-radius: 25px;
+    color: white;
+    font-size: x-large;
+    padding: 15px 50px;
+}

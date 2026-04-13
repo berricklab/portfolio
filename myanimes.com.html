@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Animes Company</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="myanimes.com.css">
+</head>
+
+<body>
+
+    <nav>
+        <h1>My Animes</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h2>Welcome to My Animes Company</h2>
+        <p>Your hub for anime content, reviews, and storytelling.</p>
+        <button onclick="scrollToSection('services')">Explore</button>
+    </div>
+
+    <section id="services">
+        <h2 style="text-align:center;margin-bottom:30px">Our Services</h2>
+        <div class="services">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1608889175123-8ee362201f81" downloadx>
+                <h3>Anime Reviews</h3>
+                <p>Deep and engaging anime reviews with ratings.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432" download>
+                <h3>Content Creation</h3>
+                <p>High-quality videos and storytelling content.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b" download>
+                <h3>Community</h3>
+                <p>Join anime lovers and share experiences.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about">
+            <h2>About Us</h2>
+            <p>We bring anime fans together through content, storytelling, and community engagement.</p>
+            <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4" download>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 style="text-align:center;margin-bottom:20px">Contact Us</h2>
+        <div class="contact">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 My Animes Company</p>
+    </footer>
+
+    <script>
+        function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }) }
+
+        const cards = document.querySelectorAll('.card')
+        window.addEventListener('scroll', () => {
+            cards.forEach(card => {
+                const top = card.getBoundingClientRect().top
+                if (top < window.innerHeight - 50) { card.style.opacity = 1; card.style.transform = 'translateY(0)' }
+            })
+        })
+    </script>
+
+</body>
+
+</html>
